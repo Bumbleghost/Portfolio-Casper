@@ -1,0 +1,169 @@
+
+.button1, button2, button3, button4{
+    margin: 10px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+  }
+  .button, button2, button3, button4::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  /* glow */
+  .button, button2, button3, button4::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+  }
+  
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+  
+  /* hover */
+  .button, button2, button3, button4:hover::before {
+    opacity: 1;
+  }
+  
+ 
+  
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+  }
+  
+  nav {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: .2em 2em;
+    float: right;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0;
+    padding: .2em .7em;
+  }
+  
+  nav a {
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font-family: Ubuntu;
+    font-size: 1.15em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    transition: .25s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: rgb(26, 153, 204);
+  } 
+  
+  
+  .nav-bg {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgb(50, 50, 50);
+    transition: .45s ease-in-out;
+  }
+  
+  .bg-hidden {
+    top: -100%;
+    opacity: 0;
+  }
+  
+  .bg-visible {
+    top: 0;
+    opacity: 1;
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: Ubuntu;
+    letter-spacing: 1px;
+  }
+  
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: rgb(50, 50, 50);
+    background: url(https://wallpaperaccess.com/full/3014450.jpg) no-repeat 50% 50% fixed;
+    background-size: 130%;
+    overflow: hidden;
+  }
+  
+  .hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    padding: .3em;
+    font-size: 3em;
+    font-weight: lighter;
+  }
+  
+  .content-wrapper {
+    width: 80%;
+    height: 3000px;
+    padding: 1em 10%;
+  }
+  
+  .content-wrapper h1 {
+    margin: 0;
+    color: rgb(220, 120, 0);
+  }
+  
+  .content-wrapper p {
+    font-family: "Open Sans";
+    text-indent: 1.5em;
+  }
+
+  
